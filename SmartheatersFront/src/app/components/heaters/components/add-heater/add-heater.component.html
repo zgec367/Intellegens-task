@@ -1,0 +1,63 @@
+<div class="container">
+  <mat-card
+    *ngIf="!error"
+    class="card-tile"
+    [ngStyle]="{
+      'pointer-events': saving ? 'none' : 'all',
+      opacity: saving ? 0.4 : 'unset'
+    }"
+  >
+    <h1 class="title">Add sold heater</h1>
+    <mat-card-content>
+      <form #form="ngForm" class="form-container">
+        <mat-form-field appearance="outline">
+          <mat-label>Client</mat-label>
+          <input
+            id="client"
+            name="client"
+            matInput
+            [(ngModel)]="soldHeater.client"
+            required
+          />
+          <mat-error>Please fill the client field</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Address</mat-label>
+          <input
+            id="address"
+            name="address"
+            matInput
+            required
+            [(ngModel)]="soldHeater.address"
+          />
+          <mat-error>Please fill the address field</mat-error>
+        </mat-form-field>
+      </form>
+      <h3>Choose a model of heator</h3>
+
+      <mat-button-toggle-group
+        style="border: none; display: flex; overflow-x: visible"
+      >
+        <mat-button-toggle
+          *ngFor="let image of heaterImages"
+          class="image-tile"
+          (click)="onImageClick(image.Url)"
+        >
+          <img src="{{ image.Url }}" />
+        </mat-button-toggle>
+      </mat-button-toggle-group>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button routerLinkActive="active" [routerLink]="['/heaters']">
+        Cancel
+      </button>
+      <button mat-button matTooltipClass="tooltip" (click)="saveData(form)">
+        Save
+      </button>
+    </mat-card-actions>
+  </mat-card>
+  <div class="saving-div" *ngIf="saving">
+    <h1 style="font-size: 40px; font-weight: 500">Saving</h1>
+    <mat-spinner diameter="50"> </mat-spinner>
+  </div>
+</div>

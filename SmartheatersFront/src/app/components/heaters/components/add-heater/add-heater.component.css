@@ -1,0 +1,83 @@
+.container {
+  text-align: center;
+  width: 100%;
+  position: relative;
+  height: 100%;
+}
+.saving-div {
+  position: absolute;
+  width: 100px;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  top: 40%;
+  font-size: 40px;
+}
+mat-spinner {
+  margin: auto;
+}
+.title {
+  font-size: 40px;
+  font-weight: 500;
+  color: rgb(66, 63, 63);
+  padding-top: 30px;
+}
+.mat-button {
+  background-color: rgb(66, 63, 63);
+  color: white;
+  font-size: 20px;
+  width: 150px;
+}
+.card-tile {
+  width: 40%;
+  height: 80%;
+  margin: auto;
+  box-shadow: none;
+  margin-top: 20px;
+  background-color: initial;
+}
+.form-container {
+  display: flex;
+  flex-direction: column;
+}
+.mat-card-actions {
+  margin-top: 60px;
+}
+
+.image-tile {
+  margin: 10px;
+  height: 190px;
+  border-radius: 20px;
+}
+.image-tile:hover {
+  background-color: rgba(66, 63, 63, 0.226);
+}
+
+img {
+  height: 150px;
+  width: 180px;
+  cursor: pointer;
+  margin: 20px;
+}
+.mat-button-toggle-checked {
+  background-color: rgba(66, 63, 63, 0.226);
+}
+@media screen and (max-width: 1050px) {
+  .card-tile {
+    width: 70%;
+  }
+  .mat-button {
+    width: 100px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .title {
+    font-size: 30px;
+  }
+  .image-tile {
+    transform: scale(0.8);
+    margin: 0px;
+  }
+}

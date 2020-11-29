@@ -1,0 +1,31 @@
+<mat-card class="card-tile" *ngFor="let heater of soldHeaters">
+  <img
+    mat-card-image
+    src="{{ heater.image }}"
+    alt="Photo of a Shiba Inu"
+    routerLinkActive="active"
+    [routerLink]="['/heater-details', heater]"
+  />
+  <mat-card-content
+    ><p>Client: {{ heater.client }}</p>
+    <p>Address: {{ heater.address }}</p></mat-card-content
+  >
+  <mat-card-actions>
+    <button
+      mat-icon-button
+      matTooltip="Edit"
+      routerLinkActive="active"
+      [routerLink]="['/edit-heater', heater]"
+    >
+      <mat-icon>edit</mat-icon>
+    </button>
+    <button
+      mat-icon-button
+      matTooltip="Delete"
+      color="warn"
+      (click)="deleteHeater(heater.id)"
+    >
+      <mat-icon>delete</mat-icon>
+    </button>
+  </mat-card-actions>
+</mat-card>

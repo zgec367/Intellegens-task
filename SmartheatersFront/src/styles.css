@@ -1,0 +1,42 @@
+/* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+  height: 100%;
+  color: rgb(66, 63, 63);
+}
+body {
+  margin: 0;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  background-color: rgb(232, 226, 228);
+}
+.mat-tooltip {
+  font-size: 20px;
+}
+/* Custom scrollbar */
+/* width */
+::-webkit-scrollbar {
+  width: 15px;
+  margin-right: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(66, 63, 63);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(66, 63, 63);
+}
+.mat-button-focus-overlay {
+  background-color: transparent !important;
+}
+*:focus {
+  outline: none;
+}

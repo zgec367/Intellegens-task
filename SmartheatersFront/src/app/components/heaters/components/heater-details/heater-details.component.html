@@ -1,0 +1,61 @@
+<div class="container">
+  <div class="presentation">
+    <div class="heater-details">
+      <img class="image" src="{{ soldHeater.image }}" />
+      <div class="client-address">
+        <h2>Client: {{ soldHeater.client }}</h2>
+        <h2>Address: {{ soldHeater.address }}</h2>
+      </div>
+      <button
+        mat-flat-button
+        style="font-size: 20px; color: rgb(66, 63, 63)"
+        routerLinkActive="active"
+        [routerLink]="['/heaters']"
+      >
+        Go back
+      </button>
+    </div>
+
+    <div class="heater-reading">
+      <h2 class="reading-title">
+        Temperature readings: {{ currentMonth | date: "MMMM" }}
+      </h2>
+      <mat-spinner *ngIf="loading" diameter="60"> </mat-spinner>
+      <div *ngIf="allReadings.length == 0 && !loading">
+        <img class="noData" src="https://svgshare.com/i/AY2.svg" />
+      </div>
+      <div *ngIf="!error">
+        <div class="graph">
+          <canvas *ngIf="chart" id="temperature-readings-chart"> </canvas>
+        </div>
+
+        <div class="example-container mat-elevation-z8" *ngIf="!loading">
+          <table mat-table [dataSource]="dataSource">
+            <ng-container matColumnDef="date">
+              <th mat-header-cell *matHeaderCellDef>Date</th>
+              <td mat-cell *matCellDef="let reading">
+                {{ reading.readingTimestamp | date: "d MMMM yyyy" }}
+              </td>
+            </ng-container>
+
+            <ng-container matColumnDef="time">
+              <th mat-header-cell *matHeaderCellDef>Time</th>
+              <td mat-cell *matCellDef="let reading">
+                {{ reading.readingTimestamp | date: "hh:mm:ss" }}
+              </td>
+            </ng-container>
+
+            <ng-container matColumnDef="temperature">
+              <th mat-header-cell *matHeaderCellDef>Temperature</th>
+              <td mat-cell *matCellDef="let reading">
+                {{ reading.temperature }}°C
+              </td>
+            </ng-container>
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

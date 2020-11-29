@@ -1,0 +1,76 @@
+.title {
+  font-size: 50px;
+  font-weight: 500;
+  padding-top: 30px;
+  color: white;
+}
+.container {
+  text-align: center;
+  height: 100%;
+}
+mat-icon {
+  color: rgb(66, 63, 63);
+}
+input {
+  text-align: left;
+  font-size: 20px;
+  border-radius: 10px;
+  height: 40px;
+  width: 300px;
+  border: none;
+  background-color: white;
+  color: rgb(66, 63, 63);
+  margin-top: 20px;
+}
+input:focus {
+  outline: none;
+}
+.mat-spinner {
+  margin: auto;
+}
+.error-loading {
+  margin: auto;
+  margin-top: 50px;
+}
+.error-message {
+  font-size: 40px;
+  margin-top: 80px;
+}
+::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: rgb(66, 63, 63);
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: rgb(66, 63, 63);
+}
+
+::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: rgb(66, 63, 63);
+}
+.sticky-top {
+  width: 100%;
+  padding-bottom: 20px;
+  position: sticky;
+  position: -webkit-sticky; /* For macOS/iOS Safari */
+  top: 0; /* Sets the sticky toolbar to be on top */
+  z-index: 1000 !important; /* Ensure that your app's content doesn't overlap the toolbar */
+  background-color: rgb(66, 63, 63);
+}
+@media screen and (max-width: 800px) {
+  .title {
+    font-size: 30px;
+  }
+  input {
+    width: 200px;
+  }
+  button {
+    font-size: 10px;
+  }
+  .error-message {
+    font-size: 30px;
+  }
+}

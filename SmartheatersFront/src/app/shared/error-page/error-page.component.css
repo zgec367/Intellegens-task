@@ -1,0 +1,31 @@
+.container {
+  height: 100%;
+  text-align: center;
+}
+.went-wrong-error {
+  margin: auto;
+  width: 600px;
+  height: 500px;
+}
+.error-message {
+  font-size: 45px;
+  line-height: 1em;
+}
+@media screen and (max-width: 800px) {
+  .went-wrong-error {
+    width: 400px;
+    height: 350px;
+  }
+  .error-message {
+    font-size: 35px;
+  }
+}
+@media screen and (max-width: 550px) {
+  .went-wrong-error {
+    width: 300px;
+    height: 250px;
+  }
+  .error-message {
+    font-size: 25px;
+  }
+}

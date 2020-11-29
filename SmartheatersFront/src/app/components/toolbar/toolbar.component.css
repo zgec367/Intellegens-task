@@ -1,0 +1,19 @@
+.toolbarTitle {
+  font-size: 40px;
+  font-weight: 500;
+  color: white;
+  cursor: pointer;
+}
+
+.router-container {
+  height: calc(100% - 64px);
+}
+
+.mat-toolbar {
+  background-color: rgb(66, 63, 63);
+}
+@media screen and (max-width: 800px) {
+  .toolbarTitle {
+    font-size: 25px;
+  }
+}

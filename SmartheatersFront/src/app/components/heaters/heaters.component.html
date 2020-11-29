@@ -1,0 +1,36 @@
+<div class="container">
+  <div class="sticky-top">
+    <h1 class="title">Sold heaters</h1>
+
+    <input
+      matInput
+      placeholder="Search by client"
+      [(ngModel)]="listFilterHeater"
+    />
+    <div style="padding-top: 20px">
+      <button
+        mat-fab
+        style="background-color: white"
+        matTooltip="Add new heater"
+        routerLinkActive="active"
+        [routerLink]="['/add-heater']"
+      >
+        <mat-icon>add</mat-icon>
+      </button>
+    </div>
+  </div>
+  <div style="margin-left: auto; margin-right: auto; width: 80%">
+    <app-heater-tile
+      [soldHeaters]="filteredHeaters"
+      (sendIdToParent)="eventFromChild($event)"
+    ></app-heater-tile>
+  </div>
+
+  <div class="error-loading">
+    <h1 class="error-message" *ngIf="errorMsg != null">
+      {{ errorMsg }}
+    </h1>
+
+    <mat-spinner *ngIf="loading" diameter="60"> </mat-spinner>
+  </div>
+</div>
